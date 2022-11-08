@@ -1,11 +1,5 @@
-#### Improvements to be made to the plot:
-The general idea is to make this plot visualization very close to TradingView visualization
-* Can we Create custom trace names for the bb_bands `["BB_RSI_Upper","BB_RSI_Middle", "BB_RSI_Lower"]` ?
-* Can we move the RSI related labels to the second subplot ?
-* Can we have different Symbols for the short entries and short exits?
-* I currently have a snapshot of the entire plot as a slider, instead Can we have a Date/Time Slider at the bottom of the stacked plot?
-* Instead of plotting in jupyter notebook, can we export the interactive plot (as .html) to for static exploration in a new tab in Chrome Browser?
-
-
 #### Clarifications:
-* Difference in nr. of signals between BBands, RSI creation for individual timeframes in cell #8, versus MTF batch creation in cell #9 using `vbt.talib("BBANDS").run(m5_rsi, skipna=True, timeframe=["5T","30T","1h","4h"], broadcast_kwargs=dict(wrapper_kwargs=dict(freq="5T")))`
+1. What does the `.real` do in the code `m5_rsi = vbt.talib("RSI", timeperiod = rsi_period).run(m5_data.get("Close"), skipna=True).real`?
+2. Right now, even though I have markers I cannot make out which extry/exit belongs to which trade/order, so can we add dotted lines in the plot to connect an entry and exit of a trade order, that we would see in MT5?
+3. How to access floating equity and balance after the simulation or it the same as `PnL` plot that I have at the end?
+4. You show some signal and order stats (like duration of trades etc.) that we can do in this [Signals Development](https://vectorbt.pro/pvt_5ff983ef/tutorials/signal-development/#duration) Tutorials Page. Can you give a list of suggestions (with code) about different types of order or signal analytics that can we do to make this notebook more complete / comprehensive?
