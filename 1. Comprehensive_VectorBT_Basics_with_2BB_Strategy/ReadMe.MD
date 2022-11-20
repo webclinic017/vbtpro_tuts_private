@@ -1,5 +1,9 @@
 #### Clarifications:
-I am planning to segregate long entries/exits and short entries/exits from `pf.trades` using `pf.trades.direction_long` and `pf.trades.direction_short` respectively. I am having the following issues in doing this segregation plots:
-1. Specifying the argument `entry_trace_kwargs` and `exit_trace_kwargs` in `pf_2_bb_custom.trades.direction_long[slice_lower : slice_higher].plot().show()` does not work and causes an error?
-2. I like the big translucent green and red boxes to show trade entry/exit in profit or loss, but how do I hide `Exit Profit` and `Exit Loss` in the pf_2_bb_custom.trades.direction_short[slice_lower : slice_higher].plot(` plot, not just hide the legend ?
-3. Although I see many entries/exits matching position IDs in the `pf_2_bb_custom.trades.direction_short[slice_lower : slice_higher].plot()`, I don't see the `Exit` legend label and marker (`triangle-up`)and I like to know why?
+1. Is there some built in function of  `vbt.pf.plot()` variant which plots (using plotly) the `equity` and `balance` on Y-axis & time on the X-axis and also draws a max drawdown line on the equity and balance? Currently, I am only able to do this using matplotlib `pf.trades.records_readable.PnL.cumsum().plot()` which doesn't look great.
+2. Where do I see the Max Drawdown Duration as being 282 days in the above `pf.stats()`, can we see it in the Orders plot or the matplotlib PnL `pf.trades.records_readable.PnL.cumsum().plot()` Plot _as a dotted line that connects the highest point of equity and lowest point of equity_ ?
+
+Some Resources for Calculating and plotting Max Drawdown:
+1. https://medium.com/cloudcraftz/measuring-maximum-drawdown-and-its-python-implementation-99a3963e158f
+2.https://quant.stackexchange.com/questions/55130/global-maximum-drawdown-and-maximum-drawdown-duration-implementation-in-python
+3. https://stackoverflow.com/questions/22607324/start-end-and-duration-of-maximum-drawdown-in-python
+
