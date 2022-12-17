@@ -1,2 +1,2 @@
 # VectorBT-Pro-Tutorials
-Collection of tutorials for typical usage requirements of VectorBT Pro
+Collection of VectorBT Pro tutorials from basics to advanced
